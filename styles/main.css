@@ -54,17 +54,17 @@ body {
     pointer-events: none;
 }
 
-/* Контент, который лежит поверх изображения */
+
 .hero-content {
     position: absolute;
     inset: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;         /* ← центр по горизонтали */
+    align-items: center;
     justify-content: flex-end;
     padding: 0 24px 5vh 24px;
     z-index: 2;
-    text-align: center;          /* текст внутри тоже центрируется */
+    text-align: center;
 }
 
 .hero h1 {
@@ -115,18 +115,18 @@ body {
 
 .card-img-wrapper {
     position: relative;
-    height: 160px;                /* фиксированная высота контейнера */
+    height: 160px;
     overflow: hidden;
-    background: #0d1117;          /* запасной фон на случай очень светлых/прозрачных картинок */
+    background: #0d1117;
 }
 
 .card-img {
-    width: 100%;                  /* всегда на всю ширину */
-    height: auto;                 /* сохраняем пропорции */
-    min-height: 100%;             /* гарантируем, что картинка не меньше высоты контейнера */
-    object-fit: contain;            /* обрезаем лишнее, заполняя контейнер */
-    object-position: center;      /* центрируем по горизонтали и вертикали */
-    display: block;               /* убираем возможный нижний зазор */
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
     transition: transform 0.4s ease;
     opacity: 0.8;
 }
