@@ -1,12 +1,67 @@
-<?php ?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Тестовый заголовок</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Таверна Мирестразы | Сборник историй без красоты и смысла</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-Просто проверка работы github.io
+
+<div class="hero">
+    <img src="assets/back.png"
+         alt="Просто картинка"
+         width="2940"
+         height="1960"
+         loading="lazy">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <h1>Таверна Мирестразы</h1>
+        <p>Сборник историй о приключениях героев в разных вселенных</p>
+    </div>
+</div>
+
+<section class="categories">
+    <div class="grid">
+        <a href="stories/ffxiv/index.html" class="card">
+            <div class="card-img-wrapper">
+                <img src="assets/ffxiv.png"
+                     alt="Final Fantasy XIV" class="card-img" loading="lazy">
+            </div>
+            <div class="card-content">
+                <h3>Final Fantasy XIV</h3>
+                <p>Эйтерис... Мой прекрасный Эйтерис. Каким ты стал под бдительным оком Хайделин?</p>
+                <div class="count">1 история</div>
+            </div>
+        </a>
+        <a href="stories/gw2/index.html" class="card">
+            <div class="card-img-wrapper">
+                <img src="assets/gw2.png"
+                     alt="Guild Wars 2" class="card-img" loading="lazy">
+            </div>
+            <div class="card-content">
+                <h3>Guild Wars 2</h3>
+                <p>У всех проблемы как проблемы, а у нас... Драконы</p>
+                <div class="count">0 историй</div>
+            </div>
+        </a>
+        <a href="stories/wow/index.html" class="card">
+            <div class="card-img-wrapper">
+                <img src="assets/wow.png"
+                     alt="World of Warcraft" class="card-img" loading="lazy">
+            </div>
+            <div class="card-content">
+                <h3>World of Warcraft</h3>
+                <p>Здравствуй, герой! Нам надо тут одну кучу навоза вычистить...</p>
+                <div class="count">0 историй</div>
+            </div>
+        </a>
+    </div>
+</section>
 </body>
 </html>
