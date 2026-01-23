@@ -1,10 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>Final Fantasy XIV</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Final Fantasy XIV — Истории</title>
+    <link rel="stylesheet" href="../../styles/stories.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+<!-- Header -->
+<header>
+    <div class="header-inner">
+        <a href="../../index.html" class="logo">Таверна Мирестразы</a>
+    </div>
+</header>
+
+<!-- Карусель категории -->
+<div class="hero-category">
+    <!-- Фиксированный заголовок поверх всех слайдов -->
+    <div class="slide-title-wrapper">
+        <h1 class="slide-title">Final Fantasy XIV</h1>
+    </div>
+
+    <!-- Контейнер только для меняющихся изображений -->
+    <div class="slides" id="slides">
+        <div class="slide">
+            <img src="../../assets/ffxiv/back-1.jpg" alt="" loading="lazy">
+        </div>
+        <!--<div class="slide">
+            <img src="../../assets/ffxiv/back-2.jpg" alt="" loading="lazy">
+        </div>
+        <div class="slide">
+            <img src="../../assets/ffxiv/back-3.jpg" alt="" loading="lazy">
+        </div>-->
+    </div>
+
+    <div class="hero-overlay"></div>
+</div>
+
+<!-- Список статей -->
+<section class="articles">
+    <div class="article-grid">
+        <a href="stories/ffxiv/color-of-blood.php" class="article-card">
+            <img src="../../assets/ffxiv/color-of-blood.jpg" alt="" class="article-img">
+            <div class="article-content">
+                <h2 class="article-title">Цвет моей крови</h2>
+                <div class="article-genres">
+                    Shadowbringers · Спойлеры · Body-horror
+                </div>
+                <p class="article-excerpt">
+                    Что отличает человека от чудовища?
+                </p>
+                <div class="article-meta">
+                    <span class="article-tag">История Орибоса</span>
+                    <time datetime="2025-11-12">05 января 2026</time>
+                </div>
+            </div>
+        </a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 MirraDragnil</p>
+</footer>
+
+<script>
+    const slides = document.getElementById('slides');
+    let current = 0;
+    const total = slides.children.length;
+
+    function nextSlide() {
+        current = (current + 1) % total;
+        slides.style.transform = `translateX(-${current * 100}%)`;
+    }
+
+    // автопрокрутка каждые 5.5 секунды
+    setInterval(nextSlide, 5500);
+
+    // опционально: можно добавить паузу при наведении
+    /*
+    let interval = setInterval(nextSlide, 5500);
+    slides.parentElement.addEventListener('mouseenter', () => clearInterval(interval));
+    slides.parentElement.addEventListener('mouseleave', () => interval = setInterval(nextSlide, 5500));
+    */
+</script>
 
 </body>
 </html>
