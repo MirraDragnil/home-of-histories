@@ -11,41 +11,37 @@
 </head>
 <body>
 
-<!-- Header -->
-<header>
-    <div class="header-inner">
-        <a href="../../index.html" class="logo">Таверна Мирестразы</a>
-    </div>
-</header>
-
 <!-- Карусель категории -->
 <div class="hero-category">
+    <!-- Контейнер только для меняющихся изображений -->
+    <div class="slides" id="slides">
+        <!--Тут слайдер, если нужно больше картинок - просто повторить div с классов slide-->
+        <div class="slide">
+            <img src="../../assets/ffxiv/back-1.avif" alt="" loading="lazy">
+        </div>
+    </div>
+    <div class="hero-overlay"></div>
+
     <!-- Фиксированный заголовок поверх всех слайдов -->
     <div class="slide-title-wrapper">
         <h1 class="slide-title">Final Fantasy XIV</h1>
     </div>
 
-    <!-- Контейнер только для меняющихся изображений -->
-    <div class="slides" id="slides">
-        <div class="slide">
-            <img src="../../assets/ffxiv/back-1.jpg" alt="" loading="lazy">
+    <div class="hero-content">
+        <div class="breadcrumbs-fixed">
+            <nav class="breadcrumbs">
+                <a href="../../index.html">Главная</a>  ›  <span>Final Fantasy XIV</span>
+            </nav>
         </div>
-        <!--<div class="slide">
-            <img src="../../assets/ffxiv/back-2.jpg" alt="" loading="lazy">
-        </div>
-        <div class="slide">
-            <img src="../../assets/ffxiv/back-3.jpg" alt="" loading="lazy">
-        </div>-->
+        <h1 class="slide-title">Final Fantasy XIV</h1>
     </div>
-
-    <div class="hero-overlay"></div>
 </div>
 
 <!-- Список статей -->
 <section class="articles">
     <div class="article-grid">
-        <a href="stories/ffxiv/color-of-blood.php" class="article-card">
-            <img src="../../assets/ffxiv/color-of-blood.jpg" alt="" class="article-img">
+        <a href="color-of-blood.html" class="article-card">
+            <img src="../../assets/ffxiv/color-of-blood.avif" alt="" class="article-img">
             <div class="article-content">
                 <h2 class="article-title">Цвет моей крови</h2>
                 <div class="article-genres">

@@ -1,0 +1,468 @@
+:root {
+    --bg:            #0f1117;
+    --surface:       #161b22;
+    --accent:        #58a6ff;
+    --accent-dim:    #388bfd;
+    --text:          #e6edf3;
+    --text-secondary:#8b949e;
+    --border:        #30363d;
+    --muted:         #6e7681;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    height: 460px;
+    min-height: 380px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.slides {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    transition: transform 0.88s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /*object-position: center 35%;*/
+    object-position: top center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient(
+            to bottom,
+            transparent 18%,
+            rgba(15,17,23,0.6) 52%,
+            rgba(15,17,23,0.9) 76%,
+            var(--bg) 94%,
+            var(--bg) 100%
+    );
+    pointer-events: none;
+}
+
+.hero-content,
+.content-wrapper {
+    max-width: 1400px;               /* или 1280px — подбери под главную/категории */
+    margin: 0 auto;
+    width: 100%;
+}
+
+.hero-content {
+    /* Оставляем как есть, но добавляем align-items: flex-start; чтобы дочерние элементы не растягивались */
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 32px 56px;
+    align-items: flex-start;          /* ← КЛЮЧЕВОЕ: элементы прижимаются к левому краю */
+}
+
+.breadcrumbs-fixed {
+    position: absolute;
+    top: 16px;                    /* отступ сверху от края hero */
+    left: 32px;                   /* или тот же padding, что у hero-content */
+    z-index: 4;                   /* выше оверлея и картинок */
+}
+
+.breadcrumbs-fixed .breadcrumbs {
+    /* Убираем position: relative — оно не нужно */
+    display: inline-flex !important;   /* !important на случай переопределения */
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 0.94rem;
+    font-weight: 500;
+    color: #e8edf3;
+
+    /* Компактная капсула — ширина = содержимому + padding */
+    padding: 0.38rem 1.1rem;
+    border-radius: 8px;
+
+    background: rgba(13, 17, 23, 0.82);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    box-shadow: 0 3px 14px rgba(0,0,0,0.55);
+    border: 1px solid rgba(88, 166, 255, 0.10);
+
+    /* Защита от растяжения */
+    width: auto !important;
+    max-width: none !important;
+    flex: 0 0 auto !important;       /* ← не даёт flex-родителю растягивать */
+    align-self: flex-start;           /* ← прижимает к левому краю */
+}
+
+.breadcrumbs-fixed a {
+    color: #a5d6ff;
+}
+
+.breadcrumbs-fixed a:hover {
+    color: white;
+}
+
+/* Ссылки */
+.breadcrumbs a {
+    color: #a5d6ff;
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+/* Разделитель и текущая страница */
+.breadcrumbs .separator,
+.breadcrumbs span:not(a) {
+    color: #a0a8b0;
+    opacity: 0.9;
+}
+
+.article-title {
+    font-size: clamp(2.6rem, 6.5vw, 4.6rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.12;
+    margin-bottom: 1.1rem;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+}
+
+.meta-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.4rem 2.2rem;
+    font-size: 0.98rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.1rem;
+}
+
+.meta-genres {
+    color: var(--muted);
+    /*font-style: italic;*/
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 0.8rem;
+}
+
+.tag {
+    background: rgba(88,166,255,0.11);
+    color: var(--accent);
+    padding: 0.28rem 0.88rem;
+    border-radius: 6px;
+    font-size: 0.86rem;
+    font-weight: 500;
+}
+
+/* Контент статьи — отступы унифицированы с категориями */
+.content-wrapper {
+    padding: 0 32px 6rem;          /* ← top и bottom как на странице со списком */
+}
+
+.markdown {
+    font-size: 1.07rem;
+}
+
+/* Полный сброс левых отступов */
+.markdown,
+.markdown > *,
+.markdown h1, .markdown h2, .markdown h3,
+.markdown p, .markdown ul, .markdown ol,
+.markdown pre, .markdown blockquote, .markdown table,
+.markdown img {
+    margin-left: 0 !important;
+    /*padding-left: 0 !important;*/
+}
+
+.markdown ul,
+.markdown ol {
+    padding-left: 2rem;
+    margin-left: 0;
+}
+
+.markdown blockquote {
+    padding-left: 1.4rem;
+    margin-left: 0;
+    border-left: 4px solid var(--accent-dim);
+}
+
+.markdown pre,
+.markdown table,
+.markdown img {
+    margin: 1.6rem 0;
+}
+
+.markdown h1, .markdown h2, .markdown h3 {
+    margin: 2.6rem 0 1.1rem;
+    font-weight: 600;
+}
+
+.markdown h1 { font-size: 2.5rem; }
+.markdown h2 { font-size: 2rem;   }
+.markdown h3 { font-size: 1.55rem; }
+
+.markdown p, .markdown ul, .markdown ol {
+    margin: 1.4rem 0;
+}
+
+.markdown code {
+    background: #0d1117;
+    padding: 0.22em 0.48em;
+    border-radius: 5px;
+    font-family: 'Consolas', monospace;
+    font-size: 0.96em;
+}
+
+.markdown pre {
+    background: #0d1117;
+    padding: 1.3rem;
+    border-radius: 10px;
+    overflow-x: auto;
+}
+
+.markdown pre code {
+    background: none;
+    padding: 0;
+}
+
+.markdown img {
+    max-width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.markdown img:hover {
+    transform: scale(1.014);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.45);
+}
+
+/* Lightbox */
+#lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(10,12,18,0.96);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+#lightbox.active { display: flex; }
+
+#lightbox img {
+    max-width: 96vw;
+    max-height: 96vh;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 0 60px rgba(0,0,0,0.7);
+}
+
+footer {
+    background: #0a0d14;
+    border-top: 1px solid var(--border);
+    padding: 3.5rem 2rem 2.5rem;
+    color: var(--muted);
+    font-size: 0.92rem;
+    text-align: center;
+    margin-top: auto;
+}
+
+@media (max-width: 768px) {
+    .hero              { height: 380px; min-height: 320px; }
+    .hero-content      { padding: 0 24px 44px; }
+    .content-wrapper   { padding: 3rem 24px 5rem; }
+    .article-title     { font-size: clamp(2.2rem, 7.5vw, 3.6rem); }
+}
+
+@media (max-width: 480px) {
+    .hero-content      { padding: 0 16px 36px; }
+    .content-wrapper   { padding: 2.5rem 16px 4rem; }
+}
+
+/* Блок сна — возвращаем атмосферный вид с туманом */
+.dream-section {
+    margin: 3.5rem 0 4.5rem;                /* больше воздуха сверху и снизу */
+    padding: 2.8rem 3.2rem;                 /* увеличенные внутренние отступы */
+    background: linear-gradient(135deg,
+    rgba(20, 25, 40, 0.94) 0%,
+    rgba(10, 15, 30, 0.90) 100%);
+    border-left: 6px solid #6b48ff;         /* фиолетовая полоса слева */
+    border-radius: 0 14px 14px 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+            inset 0 0 40px rgba(107, 72, 255, 0.12),   /* внутреннее свечение */
+            0 10px 40px rgba(0, 0, 0, 0.65);
+}
+
+/* Убираем лишние внешние отступы у параграфов внутри блока */
+.dream-section p {
+    margin: 1.2rem 0 !important;           /* уменьшаем вертикальные отступы внутри блока */
+    padding: 0;
+}
+
+/* Первый и последний параграф — ещё больше воздуха */
+.dream-section p:first-child {
+    margin-top: 0 !important;
+}
+
+.dream-section p:last-child {
+    margin-bottom: 0 !important;
+}
+
+/* Блок сна — мягче и естественнее */
+.dream-section {
+    margin:          3.2rem 0 4.2rem;          /* хороший воздух сверху и снизу */
+    padding:         2.4rem 3rem 2.8rem;       /* больше внутреннего пространства */
+    background:      rgba(12, 15, 28, 0.92);   /* чуть светлее фона, но всё ещё тёмный */
+    border-left:     5px solid rgba(88, 166, 255, 0.28);  /* тонкая синяя полоса слева */
+    border-radius:   0 10px 10px 0;
+    position:        relative;
+}
+
+/* Текст внутри — читаемый, слегка приглушённый, но не размытый */
+.dream-text {
+    color:           #d4e0ff;
+    opacity:         0.94;
+    line-height:     1.78;
+}
+
+/* Убираем лишние отступы у параграфов внутри блока */
+.dream-section p {
+    margin:          1.1rem 0 !important;
+}
+
+/* Первый и последний параграф — без лишних зазоров */
+.dream-section p:first-child { margin-top:    0 !important; }
+.dream-section p:last-child  { margin-bottom: 0 !important; }
+
+/* Пробуждение — пульсация + разрыв, но скромнее */
+.reality-tear {
+    margin-top:      2.4rem;
+    text-align:      left;               /* ← выравнивание по левому краю */
+    position:        relative;
+}
+
+.wake-up-text {
+    font-weight:     600;
+    color:           #ff6b6b;
+    display:         inline-block;
+    animation:       wake-pulse 2.8s infinite alternate;
+    text-shadow:
+            0 0 8px rgba(255, 107, 107, 0.6),
+            0 0 16px rgba(104, 42, 42, 0.6),
+            2px 2px 4px rgba(0,0,0,0.5);
+    filter:
+            drop-shadow(0 0 4px rgba(255, 160, 160, 0.5))
+            brightness(1.05)
+            contrast(1.1);
+}
+
+@keyframes wake-pulse {
+    from { transform: scale(1);   opacity: 0.88; }
+    to   { transform: scale(1.04); opacity: 1;   }
+}
+
+/* Линия разрыва — тоньше и мягче */
+.tear-line {
+    height:          2px;
+    background:      linear-gradient(90deg, transparent, #ff4757, transparent);
+    margin:          1.4rem 0 0;
+    width:           50%;
+    max-width:       320px;
+    border-radius:   1px;
+    opacity:         0.7;
+}
+
+/* Искажённая реплика, пробивающаяся сквозь сон */
+p.distorted-speech {
+    color: #d0e0ff;
+    opacity: 0.88;
+    letter-spacing: 0.8px;
+    line-height: 1.7;
+    text-shadow:
+            0 0 8px rgba(160, 200, 255, 0.6),
+            0 0 16px rgba(100, 150, 255, 0.4),
+            2px 2px 4px rgba(0,0,0,0.5);
+
+    /* Лёгкое двоение / эхо */
+    filter:
+            drop-shadow(0 0 4px rgba(160, 200, 255, 0.5))
+            brightness(1.05)
+            contrast(1.1);
+
+    /* Анимация дрожания/искажения */
+    animation:
+            speech-distort 3.2s infinite ease-in-out,
+            speech-flicker 8s infinite steps(4);
+}
+
+@keyframes speech-distort {
+    0%, 100% { transform: translate(0, 0) skew(0deg); }
+    25%      { transform: translate(1.5px, 0.8px) skew(1.5deg); }
+    50%      { transform: translate(-1px, -0.5px) skew(-1deg); }
+    75%      { transform: translate(0.8px, 1.2px) skew(0.8deg); }
+}
+
+@keyframes speech-flicker {
+    0%, 100% { opacity: 0.88; }
+    10%, 60%, 90% { opacity: 0.92; }
+    20%, 70%      { opacity: 0.80; }
+    40%           { opacity: 0.85; }
+}
+
+/* Дополнительно: можно сделать текст чуть "размазанным" */
+p.distorted-speech::before,
+p.distorted-speech::after {
+    content: attr(data-text);           /* дублируем текст через атрибут */
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: rgba(160, 200, 255, 0.18);
+    filter: blur(1.5px);
+    pointer-events: none;
+    z-index: -1;
+}
+
+p.distorted-speech::after {
+    left: 1.5px;
+    top: 1px;
+    color: rgba(255, 100, 120, 0.12);
+    filter: blur(2px);
+}
