@@ -12,9 +12,23 @@
 <body>
 
 <!-- Header -->
-<header>
+<header class="category-header">
     <div class="header-inner">
-        <a href="../../index.html" class="logo">Таверна Мирестразы</a>
+        <!-- Левый край: логотип + крошки -->
+        <div class="left">
+            <nav class="breadcrumbs">
+                <a href="../../index.html">Главная</a>
+                <span class="separator">›</span>
+                <span class="current">Final Fantasy XIV</span>
+            </nav>
+        </div>
+        <!-- Опционально: справа можно оставить ссылки на другие категории, но мелким шрифтом -->
+        <!--<nav class="other-categories">
+            <a href="/test">Test</a>
+            <a href="/test">Test</a>
+            <a href="/test">Test</a>-->
+            <!-- ... -->
+        <!--</nav>-->
     </div>
 </header>
 
@@ -44,7 +58,7 @@
 <!-- Список статей -->
 <section class="articles">
     <div class="article-grid">
-        <a href="stories/ffxiv/color-of-blood.php" class="article-card">
+        <a href="color-of-blood.html" class="article-card">
             <img src="../../assets/ffxiv/color-of-blood.jpg" alt="" class="article-img">
             <div class="article-content">
                 <h2 class="article-title">Цвет моей крови</h2>

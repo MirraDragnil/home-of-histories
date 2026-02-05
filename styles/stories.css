@@ -26,14 +26,15 @@ body {
 }
 
 /* ─── Header ─── */
-header {
-    background: rgba(13,17,23,0.85);
-    backdrop-filter: blur(10px);
+.category-header {
+    background: rgba(15, 17, 23, 0.75);
+    backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
     position: sticky;
     top: 0;
-    z-index: 100;
-    padding: 1rem 2rem;
+    z-index: 90;
+    padding: 0.9rem 2rem;
+    font-size: 0.94rem;
 }
 
 .header-inner {
@@ -42,26 +43,66 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1.5rem;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
 }
 
 .logo {
-    font-size: 1.4rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    color: var(--text);
+    color: var(--accent);
     text-decoration: none;
 }
 
-nav a {
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.breadcrumbs a {
     color: var(--text-secondary);
     text-decoration: none;
-    margin-left: 1.8rem;
-    font-weight: 500;
-    transition: color 0.2s;
 }
 
-nav a:hover,
-nav a.active {
+.breadcrumbs a:hover {
     color: var(--accent);
+}
+
+.separator {
+    color: var(--muted);
+}
+
+.current {
+    color: var(--text);
+    font-weight: 500;
+}
+
+.other-categories {
+    display: flex;
+    gap: 1.4rem;
+    font-size: 0.92rem;
+}
+
+.other-categories a {
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+
+.other-categories a:hover {
+    color: var(--accent);
+}
+
+/* на мобильных можно спрятать другие категории или сделать их выпадашкой */
+@media (max-width: 768px) {
+    .other-categories { display: none; }
+    .left { gap: 1.2rem; }
 }
 
 /* ─── Карусель категории ─── */
