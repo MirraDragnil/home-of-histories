@@ -82,21 +82,65 @@ body {
     width: 100%;
 }
 
-.breadcrumbs {
-    font-size: 0.94rem;
-    color: var(--text-secondary);
-    margin-bottom: 12px;
-    opacity: 0.92;
+.breadcrumbs-fixed {
+    position: absolute;
+    top: 16px;                    /* отступ сверху от края hero */
+    left: 32px;                   /* или тот же padding, что у hero-content */
+    z-index: 4;                   /* выше оверлея и картинок */
 }
 
+.breadcrumbs-fixed .breadcrumbs {
+    /* Убираем position: relative — оно не нужно */
+    display: inline-flex !important;   /* !important на случай переопределения */
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 0.94rem;
+    font-weight: 500;
+    color: #e8edf3;
+
+    /* Компактная капсула — ширина = содержимому + padding */
+    padding: 0.38rem 1.1rem;
+    border-radius: 8px;
+
+    background: rgba(13, 17, 23, 0.82);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    box-shadow: 0 3px 14px rgba(0,0,0,0.55);
+    border: 1px solid rgba(88, 166, 255, 0.10);
+
+    /* Защита от растяжения */
+    width: auto !important;
+    max-width: none !important;
+    flex: 0 0 auto !important;       /* ← не даёт flex-родителю растягивать */
+    align-self: flex-start;           /* ← прижимает к левому краю */
+}
+
+.breadcrumbs-fixed a {
+    color: #a5d6ff;
+}
+
+.breadcrumbs-fixed a:hover {
+    color: white;
+}
+
+/* Ссылки */
 .breadcrumbs a {
-    color: var(--accent);
+    color: #a5d6ff;
     text-decoration: none;
 }
 
 .breadcrumbs a:hover {
+    color: #ffffff;
     text-decoration: underline;
     text-underline-offset: 2px;
+}
+
+/* Разделитель и текущая страница */
+.breadcrumbs .separator,
+.breadcrumbs span:not(a) {
+    color: #a0a8b0;
+    opacity: 0.9;
 }
 
 .slide-title {
