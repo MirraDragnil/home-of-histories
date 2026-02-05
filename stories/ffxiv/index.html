@@ -11,34 +11,8 @@
 </head>
 <body>
 
-<!-- Header -->
-<header class="category-header">
-    <div class="header-inner">
-        <!-- Левый край: логотип + крошки -->
-        <div class="left">
-            <nav class="breadcrumbs">
-                <a href="../../index.html">Главная</a>
-                <span class="separator">›</span>
-                <span class="current">Final Fantasy XIV</span>
-            </nav>
-        </div>
-        <!-- Опционально: справа можно оставить ссылки на другие категории, но мелким шрифтом -->
-        <!--<nav class="other-categories">
-            <a href="/test">Test</a>
-            <a href="/test">Test</a>
-            <a href="/test">Test</a>-->
-            <!-- ... -->
-        <!--</nav>-->
-    </div>
-</header>
-
 <!-- Карусель категории -->
 <div class="hero-category">
-    <!-- Фиксированный заголовок поверх всех слайдов -->
-    <div class="slide-title-wrapper">
-        <h1 class="slide-title">Final Fantasy XIV</h1>
-    </div>
-
     <!-- Контейнер только для меняющихся изображений -->
     <div class="slides" id="slides">
         <div class="slide">
@@ -51,8 +25,19 @@
             <img src="../../assets/ffxiv/back-3.jpg" alt="" loading="lazy">
         </div>-->
     </div>
-
     <div class="hero-overlay"></div>
+
+    <!-- Фиксированный заголовок поверх всех слайдов -->
+    <div class="slide-title-wrapper">
+        <h1 class="slide-title">Final Fantasy XIV</h1>
+    </div>
+
+    <div class="hero-content">
+        <nav class="breadcrumbs">
+            <a href="/">Главная</a>  ›  <span>Final Fantasy XIV</span>
+        </nav>
+        <h1 class="slide-title">Final Fantasy XIV</h1>
+    </div>
 </div>
 
 <!-- Список статей -->
