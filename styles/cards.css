@@ -1,16 +1,17 @@
 /* ─── Секции со списками карточек ─── */
-.categories {
-    padding: 1rem 24px 8rem;
-    max-width: 1280px;
-    margin: 0 auto;
-    background: var(--bg);
-}
-
+.categories,
 .articles {
     padding: 4rem 24px 6rem;
     max-width: 1280px;
     margin: 0 auto;
     width: 100%;
+}
+
+.categories {
+    background: var(--bg);
+}
+
+.articles {
     flex: 1;
 }
 
@@ -18,12 +19,8 @@
 .grid,
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(var(--grid-min, 280px), 100%), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(var(--grid-min, 300px), 100%), 1fr));
     gap: var(--grid-gap, 1.5rem);
-}
-
-.grid {
-    margin-top: 3.5rem;
 }
 
 /* ─── Карточка (главная + список рассказов) ─── */
@@ -150,14 +147,15 @@
 
 /* ─── Адаптив ─── */
 @media (max-width: 768px) {
+    .categories,
     .articles {
-        padding: 2.8rem 16px 5rem;
+        padding: 2.8rem 24px 5rem;
     }
 }
 
-@media (max-width: 640px) {
-    .categories {
-        padding-top: 4rem;
-        padding-bottom: 6rem;
+@media (max-width: 480px) {
+    .categories,
+    .articles {
+        padding: 2.5rem 16px 4rem;
     }
 }

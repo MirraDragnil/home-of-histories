@@ -6,7 +6,7 @@
     --hero-padding: 0 24px 5vh;
     --hero-content-align: center;
     --hero-text-align: center;
-    --hero-content-max-width: none;
+    --hero-content-max-width: 1280px;
     --overlay-gradient: linear-gradient(
             to bottom,
             transparent 0%,
