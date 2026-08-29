@@ -21,6 +21,11 @@
     object-position: top center;
 }
 
+/* Эксперимент: для некоторых обложек контекстнее центр картинки по высоте */
+.hero--center .slide img {
+    object-position: center center;
+}
+
 /* ─── Заголовок и метаданные рассказа ─── */
 .article-title {
     font-size: clamp(2.6rem, 6.5vw, 4.6rem);
@@ -90,6 +95,15 @@
     padding-left: 1.4rem;
     margin-left: 0;
     border-left: 4px solid var(--accent-dim);
+}
+
+/* Отбивка между частями рассказа */
+.markdown hr {
+    border: none;
+    height: 1px;
+    max-width: 320px;
+    margin: 3rem auto;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
 }
 
 .markdown pre,
