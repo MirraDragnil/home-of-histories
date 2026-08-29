@@ -1,0 +1,37 @@
+:root {
+    --bg:             #0f1117;
+    --surface:        #161b22;
+    --accent:         #58a6ff;
+    --accent-dim:     #388bfd;
+    --text:           #e6edf3;
+    --text-secondary: #8b949e;
+    --border:         #30363d;
+    --muted:          #6e7681;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ─── Footer ─── */
+footer {
+    background: #0a0d14;
+    border-top: 1px solid var(--border);
+    padding: 3rem 2rem 2rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: auto;
+}

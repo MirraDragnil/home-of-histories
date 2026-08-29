@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Final Fantasy XIV — Истории</title>
-    <link rel="stylesheet" href="../../styles/stories.css">
+    <link rel="stylesheet" href="../../styles/base.css">
+    <link rel="stylesheet" href="../../styles/hero.css">
+    <link rel="stylesheet" href="../../styles/cards.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -12,20 +14,14 @@
 <body>
 
 <!-- Карусель категории -->
-<div class="hero-category">
-    <!-- Контейнер только для меняющихся изображений -->
-    <div class="slides" id="slides">
-        <!--Тут слайдер, если нужно больше картинок - просто повторить div с классов slide-->
+<div class="hero hero--category">
+    <div class="slides" id="slides" data-interval="5500">
+        <!--Слайдер: для новых картинок просто повторить div с классом slide-->
         <div class="slide">
             <img src="../../assets/ffxiv/back-1.avif" alt="" loading="lazy">
         </div>
     </div>
     <div class="hero-overlay"></div>
-
-    <!-- Фиксированный заголовок поверх всех слайдов -->
-    <div class="slide-title-wrapper">
-        <h1 class="slide-title">Final Fantasy XIV</h1>
-    </div>
 
     <div class="hero-content">
         <div class="breadcrumbs-fixed">
@@ -33,25 +29,27 @@
                 <a href="../../index.html">Главная</a>  ›  <span>Final Fantasy XIV</span>
             </nav>
         </div>
-        <h1 class="slide-title">Final Fantasy XIV</h1>
+        <h1 class="hero-title">Final Fantasy XIV</h1>
     </div>
 </div>
 
 <!-- Список статей -->
 <section class="articles">
-    <div class="article-grid">
-        <a href="color-of-blood.html" class="article-card">
-            <img src="../../assets/ffxiv/color-of-blood.avif" alt="" class="article-img">
-            <div class="article-content">
-                <h2 class="article-title">Цвет моей крови</h2>
-                <div class="article-genres">
+    <div class="card-grid">
+        <a href="color-of-blood.html" class="card">
+            <div class="card-img-wrapper">
+                <img src="../../assets/ffxiv/color-of-blood.avif" alt="" class="card-img">
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">Цвет моей крови</h2>
+                <div class="card-genres">
                     Shadowbringers · Спойлеры · Body-horror
                 </div>
-                <p class="article-excerpt">
+                <p class="card-excerpt">
                     Что отличает человека от чудовища?
                 </p>
-                <div class="article-meta">
-                    <span class="article-tag">История Орибоса</span>
+                <div class="card-meta">
+                    <span class="card-tag">История Орибоса</span>
                     <time datetime="2025-11-12">05 января 2026</time>
                 </div>
             </div>
@@ -64,26 +62,7 @@
     <p>© 2026 MirraDragnil</p>
 </footer>
 
-<script>
-    const slides = document.getElementById('slides');
-    let current = 0;
-    const total = slides.children.length;
-
-    function nextSlide() {
-        current = (current + 1) % total;
-        slides.style.transform = `translateX(-${current * 100}%)`;
-    }
-
-    // автопрокрутка каждые 5.5 секунды
-    setInterval(nextSlide, 5500);
-
-    // опционально: можно добавить паузу при наведении
-    /*
-    let interval = setInterval(nextSlide, 5500);
-    slides.parentElement.addEventListener('mouseenter', () => clearInterval(interval));
-    slides.parentElement.addEventListener('mouseleave', () => interval = setInterval(nextSlide, 5500));
-    */
-</script>
+<script src="../../assets/js/slides.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,165 @@
+/* ─── Секции со списками карточек ─── */
+.categories {
+    padding: 1rem 24px 8rem;
+    max-width: 1280px;
+    margin: 0 auto;
+    background: var(--bg);
+}
+
+.articles {
+    padding: 4rem 24px 6rem;
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+    flex: 1;
+}
+
+/* ─── Сетки карточек ─── */
+.grid,
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--grid-min, 320px), 1fr));
+    gap: var(--grid-gap, 1.5rem);
+}
+
+.grid {
+    --grid-min: 280px;
+    margin-top: 3.5rem;
+}
+
+.card-grid {
+    --grid-min: 340px;
+    --grid-gap: 1.75rem;
+}
+
+/* ─── Карточка (главная + список рассказов) ─── */
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.22s ease;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 32px -12px rgba(88, 166, 255, 0.2);
+}
+
+.card-img-wrapper {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+    background: #0d1117;
+    flex-shrink: 0;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    opacity: 0.8;
+}
+
+.card:hover .card-img {
+    opacity: 1;
+}
+
+/* Главная: баннеры логично показывать целиком, не обрезая */
+.card--banner .card-img-wrapper { height: 160px; }
+.card--banner .card-img { object-fit: contain; min-height: 100%; }
+
+.card-content {
+    padding: 1.4rem 1.5rem 1.6rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    line-height: 1.35;
+}
+
+.card-genres {
+    font-size: 0.875rem;
+    color: var(--muted);
+    margin: 0.4rem 0 0.9rem;
+    line-height: 1.45;
+}
+
+.card-desc,
+.card-excerpt {
+    font-size: 0.94rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 1.1rem;
+}
+
+/* Главная: фиксированная высота — pill «история» выравнивается у всех карточек */
+.card-desc {
+    height: 6rem;
+}
+
+.card-excerpt {
+    margin-top: auto;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+    color: var(--muted);
+}
+
+.card-tag {
+    background: rgba(88, 166, 255, 0.1);
+    color: var(--accent);
+    padding: 0.28rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    font-weight: 500;
+}
+
+.card-count {
+    display: inline-block;
+    background: rgba(88, 166, 255, 0.12);
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    margin-top: 0.75rem;
+    align-self: flex-start;
+}
+
+/* ─── Адаптив ─── */
+@media (max-width: 768px) {
+    .articles {
+        padding: 2.8rem 16px 5rem;
+    }
+
+    .card-grid {
+        gap: 1.4rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .categories {
+        padding-top: 4rem;
+        padding-bottom: 6rem;
+    }
+}

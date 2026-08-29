@@ -4,7 +4,9 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Таверна Мирестразы | Сборник историй без красоты и смысла</title>
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/hero.css">
+    <link rel="stylesheet" href="styles/cards.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -15,50 +17,49 @@
     <img src="assets/back.avif"
          alt="Просто картинка"
          width="2940"
-         height="1960"
-         loading="lazy">
+         height="1960">
 
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
-        <h1>Таверна Мирестразы</h1>
-        <p>Сборник историй о приключениях героев в разных вселенных</p>
+        <h1 class="hero-title">Таверна Мирестразы</h1>
+        <p class="hero-subtitle">Сборник историй о приключениях героев в разных вселенных</p>
     </div>
 </div>
 
 <section class="categories">
     <div class="grid">
-        <a href="stories/ffxiv/index.html" class="card">
+        <a href="stories/ffxiv/index.html" class="card card--banner">
             <div class="card-img-wrapper">
                 <img src="assets/ffxiv.webp"
                      alt="Final Fantasy XIV" class="card-img" loading="lazy">
             </div>
             <div class="card-content">
-                <h3>Final Fantasy XIV</h3>
-                <p>Эйтерис... Мой прекрасный Эйтерис. Каким ты стал под бдительным оком Хайделин?</p>
-                <div class="count">1 история</div>
+                <h3 class="card-title">Final Fantasy XIV</h3>
+                <p class="card-desc">Эйтерис... Мой прекрасный Эйтерис. Каким ты стал под бдительным оком Хайделин?</p>
+                <div class="card-count">1 история</div>
             </div>
         </a>
-        <!--<a href="stories/gw2/index.html" class="card">
+        <!--<a href="stories/gw2/index.html" class="card card--banner">
             <div class="card-img-wrapper">
                 <img src="assets/gw2.webp"
                      alt="Guild Wars 2" class="card-img" loading="lazy">
             </div>
             <div class="card-content">
-                <h3>Guild Wars 2</h3>
-                <p>У всех проблемы как проблемы, а у нас... драконы</p>
-                <div class="count">0 историй</div>
+                <h3 class="card-title">Guild Wars 2</h3>
+                <p class="card-desc">У всех проблемы как проблемы, а у нас... драконы</p>
+                <div class="card-count">0 историй</div>
             </div>
         </a>-->
-        <!--<a href="stories/wow/index.html" class="card">
+        <!--<a href="stories/wow/index.html" class="card card--banner">
             <div class="card-img-wrapper">
                 <img src="assets/wow.webp"
                      alt="World of Warcraft" class="card-img" loading="lazy">
             </div>
             <div class="card-content">
-                <h3>World of Warcraft</h3>
-                <p>Здравствуй, герой! Нам надо тут одну кучу навоза вычистить...</p>
-                <div class="count">0 историй</div>
+                <h3 class="card-title">World of Warcraft</h3>
+                <p class="card-desc">Здравствуй, герой! Нам надо тут одну кучу навоза вычистить...</p>
+                <div class="card-count">0 историй</div>
             </div>
         </a>-->
     </div>

@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Цвет моей крови — Final Fantasy XIV</title>
 
+    <link rel="stylesheet" href="../../styles/base.css">
+    <link rel="stylesheet" href="../../styles/hero.css">
+    <link rel="stylesheet" href="../../styles/story.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="../../styles/story.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div class="hero">
-    <div class="slides" id="slides">
+    <div class="slides" id="slides" data-interval="6200">
         <div class="slide"><img src="../../assets/ffxiv/color_of_blood_1.jpg" alt=""></div>
     </div>
 
@@ -241,31 +243,8 @@
     <p>© 2026 MirraDragnil</p>
 </footer>
 
-<script>
-    // Карусель изображений (остаётся без изменений)
-    const slidesEl = document.getElementById('slides');
-    let idx = 0;
-    setInterval(() => {
-        idx = (idx + 1) % slidesEl.children.length;
-        slidesEl.style.transform = `translateX(-${idx * 100}%)`;
-    }, 6200);
-
-    // Lightbox для изображений
-    const lightbox = document.getElementById('lightbox');
-    const lbImg = document.getElementById('lb-img');
-
-    document.addEventListener('click', e => {
-        const img = e.target.closest('.markdown img');
-        if (img) {
-            lbImg.src = img.src;
-            lightbox.classList.add('active');
-        }
-    });
-
-    lightbox.addEventListener('click', () => {
-        lightbox.classList.remove('active');
-    });
-</script>
+<script src="../../assets/js/slides.js"></script>
+<script src="../../assets/js/lightbox.js"></script>
 
 </body>
 </html>
