@@ -92,6 +92,15 @@
     border-left: 4px solid var(--accent-dim);
 }
 
+/* Отбивка между частями рассказа */
+.markdown hr {
+    border: none;
+    height: 1px;
+    max-width: 320px;
+    margin: 3rem auto;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
+
 .markdown pre,
 .markdown table,
 .markdown img {
