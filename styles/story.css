@@ -21,6 +21,11 @@
     object-position: top center;
 }
 
+/* Эксперимент: для некоторых обложек контекстнее центр картинки по высоте */
+.hero--center .slide img {
+    object-position: center center;
+}
+
 /* ─── Заголовок и метаданные рассказа ─── */
 .article-title {
     font-size: clamp(2.6rem, 6.5vw, 4.6rem);
