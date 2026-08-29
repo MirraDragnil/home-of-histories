@@ -38,13 +38,11 @@
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 16px 32px -12px rgba(88, 166, 255, 0.2);
 }
 
 /* Тач: мгновенный отклик на тап (у hover на touch-устройствах нет срабатывания) */
 .card:active {
     transform: translateY(-2px);
-    box-shadow: 0 12px 24px -12px rgba(88, 166, 255, 0.25);
 }
 
 .card-img-wrapper {
