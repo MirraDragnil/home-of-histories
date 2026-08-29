@@ -124,11 +124,13 @@
     position: absolute;
     top: 16px;
     left: 32px;
+    right: 32px;
     z-index: 4;
 }
 
 .breadcrumbs {
     display: inline-flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 0.65rem;
     font-size: 0.94rem;
@@ -142,8 +144,7 @@
     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.55);
     border: 1px solid rgba(88, 166, 255, 0.10);
     width: auto;
-    max-width: none;
-    align-self: flex-start;
+    max-width: 100%;
 }
 
 .breadcrumbs a {
@@ -155,6 +156,14 @@
     color: #ffffff;
     text-decoration: underline;
     text-underline-offset: 2px;
+}
+
+/* Разделитель — отдельный элемент вне ссылки: не подчёркивается, отступы симметричны */
+.breadcrumbs .crumb-sep {
+    color: #a0a8b0;
+    opacity: 0.9;
+    user-select: none;
+    flex-shrink: 0;
 }
 
 .breadcrumbs span {
@@ -179,11 +188,37 @@
     .hero-title {
         font-size: clamp(2rem, 7vw, 3.2rem);
     }
+
+    /* Мобильные крошки: оставляем только «‹ родитель» */
+    .breadcrumbs-fixed {
+        left: 24px;
+        right: 24px;
+    }
+
+    .breadcrumbs::before {
+        content: "‹";
+        color: #a0a8b0;
+        opacity: 0.9;
+    }
+
+    .breadcrumbs > * {
+        display: none;
+    }
+
+    .breadcrumbs a:last-of-type {
+        display: inline-flex;
+        align-items: center;
+    }
 }
 
 @media (max-width: 480px) {
     .hero--category .hero-content {
         --hero-padding: 0 16px 28px;
+    }
+
+    .breadcrumbs-fixed {
+        left: 16px;
+        right: 16px;
     }
 
     .breadcrumbs {
