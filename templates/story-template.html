@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITLE}} — {{WORLD}}</title>
+    <link rel="stylesheet" href="../../styles/base.css">
+    <link rel="stylesheet" href="../../styles/hero.css">
+    <link rel="stylesheet" href="../../styles/story.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Заготовка для stories/<world>/<slug>.html. Заменить все {{...}} перед публикацией. -->
+<!-- Для центрирования обложки по вертикали добавьте hero--center к hero. -->
+<div class="hero">
+    <div class="slides" id="slides" data-interval="6200">
+        <div class="slide"><img src="../../assets/{{WORLD_SLUG}}/{{COVER_FILENAME}}" alt="{{COVER_ALT}}"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <div class="breadcrumbs-fixed">
+            <nav class="breadcrumbs">
+                <a href="../../index.html">Главная</a>
+                <span class="crumb-sep" aria-hidden="true">›</span>
+                <a href="index.html">{{WORLD}}</a>
+                <span class="crumb-sep" aria-hidden="true">›</span>
+                <span>{{TITLE}}</span>
+            </nav>
+        </div>
+        <h1 class="article-title">{{TITLE}}</h1>
+        <div class="meta-line">
+            <time datetime="{{PUBLICATION_DATE_ISO}}">{{PUBLICATION_DATE_RU}}</time>
+            <div class="meta-genres">{{GENRES_AND_WARNINGS}}</div>
+        </div>
+        <div class="tags">
+            <span class="tag">{{STORY_SERIES}}</span>
+            <!-- Дополнительные теги, если нужны: <span class="tag">16+</span> -->
+        </div>
+    </div>
+</div>
+
+<main class="content-wrapper">
+    <article class="markdown">
+        <!-- Начало текста. Обычные абзацы, иллюстрации и специальные блоки допустимы. -->
+        <p>{{FIRST_PARAGRAPH}}</p>
+        <p>{{SECOND_PARAGRAPH}}</p>
+        <!-- Конец текста. -->
+    </article>
+</main>
+
+<!-- При наличии архивной редакции можно добавить ссылку на неё перед footer. -->
+<div id="lightbox">
+    <img id="lb-img" src="" alt="Увеличенное изображение">
+</div>
+<footer>
+    <p>© 2026 MirraDragnil</p>
+</footer>
+<script src="../../assets/js/slides.js"></script>
+<script src="../../assets/js/lightbox.js"></script>
+</body>
+</html>
