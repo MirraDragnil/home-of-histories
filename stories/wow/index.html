@@ -3,9 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World of Warcraft</title>
+    <title>World of Warcraft — Истории</title>
+    <link rel="stylesheet" href="../../styles/base.css">
+    <link rel="stylesheet" href="../../styles/hero.css">
+    <link rel="stylesheet" href="../../styles/cards.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Only this category: keep the sunset and stone pillars visible. */
+        .hero--category .slide img { object-position: center 48%; }
+    </style>
 </head>
 <body>
-
+<div class="hero hero--category">
+    <div class="slides" id="slides" data-interval="5500">
+        <div class="slide">
+            <img src="../../assets/wow/forever/thousand-needles.png" alt="Закат над Тысячей Игл">
+        </div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <div class="breadcrumbs-fixed">
+            <nav class="breadcrumbs">
+                <a href="../../index.html">Главная</a>
+                <span class="crumb-sep" aria-hidden="true">›</span>
+                <span>World of Warcraft</span>
+            </nav>
+        </div>
+        <h1 class="hero-title">World of Warcraft</h1>
+    </div>
+</div>
+<section class="articles">
+    <div class="card-grid">
+        <a href="in-search-of-good-sleep.html" class="card">
+            <div class="card-img-wrapper">
+                <img src="../../assets/wow/forever/thoradin-wall.png"
+                     alt="Орибос и ночной эльф-охотник на Стене Торадина" class="card-img" loading="lazy">
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">В поисках хорошего сна</h2>
+                <div class="card-genres">Warcraft Forever · Путевой дневник · Приключения</div>
+                <p class="card-excerpt">Два континента, семь смертей и один очень нужный спальный мешок.</p>
+                <div class="card-meta">
+                    <span class="card-tag">Echoes of the Soul</span>
+                    <span class="card-tag">Warcraft Forever</span>
+                </div>
+            </div>
+        </a>
+    </div>
+</section>
+<footer><p>© 2026 MirraDragnil</p></footer>
+<script src="../../assets/js/slides.js"></script>
 </body>
 </html>
