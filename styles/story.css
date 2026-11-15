@@ -210,6 +210,36 @@
     }
 }
 
+/* Узкие телефоны: высота шапки определяется содержимым, а не фиксированными px.
+   Верхнее поле резервирует место для мобильных хлебных крошек. */
+@media (max-width: 480px) {
+    .hero {
+        height: auto;
+        min-height: 0;
+        max-height: none;
+    }
+
+    .hero .hero-content {
+        position: relative;
+        inset: auto;
+        padding: 94px 16px 34px;
+        justify-content: flex-start;
+    }
+
+    .article-title {
+        font-size: clamp(1.9rem, 8vw, 2.4rem);
+        overflow-wrap: break-word;
+    }
+
+    .hero .meta-line {
+        gap: 0.65rem 1.2rem;
+    }
+
+    .hero .tags {
+        gap: 0.5rem;
+    }
+}
+
 /* ─── Эффекты настроения ─── */
 
 /* Блок сна — атмосферный вид с лёгким свечением */
