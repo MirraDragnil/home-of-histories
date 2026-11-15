@@ -15,24 +15,31 @@
         .travel-illustration { margin: 2.5rem 0; }
         .travel-illustration img { display: block; width: 100%; height: auto; border-radius: 10px; }
 
+        /* Высокая обложка только для широких экранов; мобильный вид не меняем. */
+        @media (min-width: 1440px) {
+            .hero {
+                --hero-height: 580px;
+                --hero-min-height: 580px;
+            }
+        }
         /* Отдельные листы путевого дневника */
         .travel-diary { max-width: 900px; margin: 0 auto; }
         .travel-diary .diary-entry {
             position: relative; margin: 0 0 2.5rem;
             padding: clamp(1.5rem, 4vw, 3rem);
-            background: #e9dfc8; color: #332c25;
-            border: 1px solid #c5b697; border-radius: 3px;
+            background: radial-gradient(ellipse at 50% 38%, #c4b397 0%, #b9a88b 70%, #a99475 100%); color: #29231e;
+            border: 1px solid #8b785e; border-radius: 3px;
             box-shadow: 0 12px 32px rgba(0,0,0,.25), inset 0 0 42px rgba(120,89,46,.06);
         }
         .travel-diary .diary-entry::before {
             content: ""; position: absolute; inset: 9px;
-            border: 1px solid rgba(113,83,46,.16); pointer-events: none;
+            border: 1px solid rgba(77,54,34,.24); pointer-events: none;
         }
         .travel-diary .diary-entry h2 {
-            color: #5d422a; font-family: Georgia, 'Times New Roman', serif;
+            color: #493322; font-family: Georgia, 'Times New Roman', serif;
             font-size: clamp(1.35rem, 3vw, 1.75rem); line-height: 1.3;
             margin: 0 0 1.4rem; padding: 0 0 .8rem;
-            border-bottom: 1px solid rgba(113,83,46,.3);
+            border-bottom: 1px solid rgba(77,54,34,.32);
         }
         .travel-diary .diary-entry p {
             font-family: Georgia, 'Times New Roman', serif;
